@@ -11,43 +11,77 @@ body{background:#e8e3db;font-family:'Montserrat',sans-serif;min-height:100vh;pad
 .hdr-top{display:flex;align-items:center;gap:24px;margin-bottom:20px}
 .hdr-logo{width:64px;height:64px;flex-shrink:0;object-fit:contain;filter:brightness(0) invert(1);opacity:0.9}
 .hdr-name{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px}
-.hdr-main{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#fff;line-height:1.15;letter-spacing:1px}
+.hdr-main{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#fff;line-height:1.15}
 .hdr-main em{color:#CEC6B6;font-style:normal}
-.hdr-sub{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.75;max-width:480px;margin-top:8px;font-weight:300}
 .hdr-rule{height:1px;background:rgba(255,255,255,0.12);margin:20px 0}
 .hdr-note{font-size:10px;color:rgba(255,255,255,0.4);line-height:1.7;font-style:italic}
 .hdr-note strong{color:rgba(255,255,255,0.65);font-style:normal;font-weight:500}
+
 .prog{background:#f5f1eb;padding:14px 52px;display:flex;align-items:center;gap:16px;border-bottom:1px solid #e0dbd2}
 .prog-lbl{font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:#999;white-space:nowrap}
 .prog-track{flex:1;background:#e0dbd2;border-radius:20px;height:3px;overflow:hidden}
 .prog-fill{height:100%;background:#C46B46;border-radius:20px;transition:width 0.4s}
-.prog-count{font-size:11px;color:#41647B;font-weight:500;white-space:nowrap;min-width:110px;text-align:right}
-.sync-status{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#aaa;white-space:nowrap;margin-left:12px}
-.sync-status.saved{color:#41647B}
-.sync-status.saving{color:#C46B46}
+.prog-count{font-size:11px;color:#41647B;font-weight:500;white-space:nowrap}
+.sync-dot{width:7px;height:7px;border-radius:50%;background:#aaa;flex-shrink:0;transition:background 0.3s}
+.sync-dot.saved{background:#41647B}
+.sync-dot.saving{background:#C46B46}
+.sync-lbl{font-size:9px;color:#aaa;white-space:nowrap}
+
 .body{padding:0 52px 52px}
 .sec{margin-top:44px}
-.sec-hd{display:flex;align-items:center;gap:0;margin-bottom:8px}
+.sec-hd{display:flex;align-items:center;margin-bottom:8px}
 .sec-line{width:24px;height:2px;background:#C46B46;flex-shrink:0;margin-right:14px}
 .sec-label{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#C46B46;margin-right:10px;white-space:nowrap}
-.sec-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#000;letter-spacing:0.5px}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#000}
 .sec-desc{font-size:11px;color:#888;line-height:1.75;margin-bottom:5px;padding-left:38px;font-weight:300}
 .blocking{font-size:8px;color:#C46B46;letter-spacing:1.5px;text-transform:uppercase;padding-left:38px;margin-top:4px}
 .sub{margin-top:18px;padding-left:38px}
 .sub-title{font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:#bbb;margin-bottom:9px;padding-bottom:7px;border-bottom:1px solid #ede9e2}
-.item{display:flex;align-items:flex-start;gap:12px;padding:8px 0;border-bottom:1px solid #f2efe9;cursor:pointer;transition:background 0.1s;border-radius:2px}
+
+.item{display:flex;align-items:flex-start;gap:12px;padding:8px 0;border-bottom:1px solid #f2efe9;border-radius:2px}
 .item:last-child{border-bottom:none}
-.item:hover{background:#faf8f5;margin:0 -8px;padding-left:8px;padding-right:8px}
-.cb-wrap{width:16px;height:16px;flex-shrink:0;margin-top:2px;border:1.5px solid #CEC6B6;border-radius:2px;display:flex;align-items:center;justify-content:center;transition:all 0.15s;background:#fff;cursor:pointer}
+.item-left{display:flex;flex-direction:column;align-items:center;gap:6px;flex-shrink:0}
+.cb-wrap{width:16px;height:16px;border:1.5px solid #CEC6B6;border-radius:2px;display:flex;align-items:center;justify-content:center;transition:all 0.15s;background:#fff;cursor:pointer;flex-shrink:0}
 .cb-wrap.checked{background:#41647B;border-color:#41647B}
 .cb-wrap svg{display:none}
 .cb-wrap.checked svg{display:block}
-.item-text{font-size:11.5px;color:#444;line-height:1.65;flex:1;font-weight:300}
+.item-info-btn{display:none}
+
+.item-right{flex:1}
+.item-text{font-size:11.5px;color:#444;line-height:1.65;font-weight:300;cursor:pointer}
 .item.done .item-text{color:#bbb;text-decoration:line-through}
+.item-meta{font-size:9px;color:#aaa;margin-top:3px;display:none;font-style:italic}
+.item-meta.show{display:block}
+.item-meta strong{color:#41647B;font-style:normal;font-weight:500}
+
 .tag-warn{font-size:7.5px;color:#C46B46;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-left:6px;border:1px solid rgba(196,107,70,0.3);padding:1px 5px;border-radius:2px}
 .note{background:#f7f4ef;border-left:2px solid #CEC6B6;padding:10px 14px;margin-top:10px;border-radius:0 3px 3px 0;font-size:10.5px;color:#888;line-height:1.7;font-style:italic}
 .note strong{color:#41647B;font-style:normal;font-weight:500}
 .rule{height:1px;background:#ede9e2;margin-top:44px}
+
+/* Activity Log */
+.log-section{margin:44px 0 0;border-top:1px solid #ede9e2}
+.log-toggle{display:flex;align-items:center;gap:14px;padding:18px 52px;cursor:pointer;background:#f7f5f0;border-bottom:1px solid #ede9e2;transition:background 0.15s}
+.log-toggle:hover{background:#f0ece4}
+.log-toggle-line{width:24px;height:2px;background:#41647B;flex-shrink:0}
+.log-toggle-title{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#41647B;flex:1}
+.log-toggle-arrow{font-size:10px;color:#aaa;transition:transform 0.2s}
+.log-toggle-arrow.open{transform:rotate(180deg)}
+.log-body{display:none;padding:20px 52px 32px;background:#f7f5f0}
+.log-body.open{display:block}
+.log-empty{font-size:11px;color:#bbb;font-style:italic;text-align:center;padding:20px 0}
+.log-entry{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid #ede9e2;align-items:flex-start}
+.log-entry:last-child{border-bottom:none}
+.log-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.log-dot.checked{background:#41647B}
+.log-dot.unchecked{background:#CEC6B6;border:1px solid #aaa}
+.log-content{flex:1}
+.log-item-name{font-size:11px;color:#444;font-weight:400;line-height:1.5;margin-bottom:3px}
+.log-item-name strong{font-weight:500;color:#000}
+.log-details{font-size:10px;color:#aaa;line-height:1.6}
+.log-details span{color:#41647B;font-weight:500}
+.log-time{font-size:9px;color:#bbb;white-space:nowrap;margin-top:2px}
+
 .ftr{background:#41647B;padding:20px 52px;display:flex;justify-content:space-between;align-items:center}
 .ftr-l{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4)}
 .ftr-l span{color:rgba(255,255,255,0.75)}
@@ -65,14 +99,15 @@ body{background:#e8e3db;font-family:'Montserrat',sans-serif;min-height:100vh;pad
       </div>
     </div>
     <div class="hdr-rule"></div>
-    <div class="hdr-note">This is the master checklist of everything the YachtWay build team needs from JBY to complete the website. <strong>Nothing listed here is optional</strong> — missing items will block design, development, or launch. If an item is already done or not applicable, mark it and add a note.</div>
+    <div class="hdr-note">Master checklist of everything the YachtWay build team needs from JBY to complete the website. <strong>Nothing listed here is optional</strong> — missing items will block design, development, or launch.</div>
   </div>
 
   <div class="prog">
     <div class="prog-lbl">Overall progress</div>
     <div class="prog-track"><div class="prog-fill" id="pf" style="width:0%"></div></div>
     <div class="prog-count" id="pc">Loading...</div>
-    <div class="sync-status" id="ss">connecting...</div>
+    <div class="sync-dot" id="sd"></div>
+    <div class="sync-lbl" id="sl">connecting...</div>
   </div>
 
   <div class="body">
@@ -82,11 +117,11 @@ body{background:#e8e3db;font-family:'Montserrat',sans-serif;min-height:100vh;pad
       <div class="sec-desc">Needed before any design work can begin. Without these, no page template can be finalized.</div>
       <div class="blocking">Blocking: Homepage design · All page templates</div>
       <div class="sub">
-        <div class="item" data-id="i0" onclick="tog('i0',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Logo files in vector format (SVG preferred, AI or EPS also accepted)</div></div>
-        <div class="item" data-id="i1" onclick="tog('i1',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Logo files in PNG format (transparent background, multiple sizes)</div></div>
-        <div class="item" data-id="i2" onclick="tog('i2',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Brand color codes (HEX and/or RGB values)</div></div>
-        <div class="item" data-id="i3" onclick="tog('i3',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Brand fonts (font files or confirmation of which Google / Adobe Fonts are used)</div></div>
-        <div class="item" data-id="i4" onclick="tog('i4',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Any existing brand guidelines document</div></div>
+        <div class="item" data-id="i0"><div class="item-left"><div class="cb-wrap" onclick="tog('i0',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i0')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i0',this.closest('.item'))">Logo files in vector format (SVG preferred, AI or EPS also accepted)</div><div class="item-meta" id="m-i0">—</div></div></div>
+        <div class="item" data-id="i1"><div class="item-left"><div class="cb-wrap" onclick="tog('i1',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i1')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i1',this.closest('.item'))">Logo files in PNG format (transparent background, multiple sizes)</div><div class="item-meta" id="m-i1">—</div></div></div>
+        <div class="item" data-id="i2"><div class="item-left"><div class="cb-wrap" onclick="tog('i2',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i2')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i2',this.closest('.item'))">Brand color codes (HEX and/or RGB values)</div><div class="item-meta" id="m-i2">—</div></div></div>
+        <div class="item" data-id="i3"><div class="item-left"><div class="cb-wrap" onclick="tog('i3',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i3')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i3',this.closest('.item'))">Brand fonts (font files or confirmation of which Google / Adobe Fonts are used)</div><div class="item-meta" id="m-i3">—</div></div></div>
+        <div class="item" data-id="i4"><div class="item-left"><div class="cb-wrap" onclick="tog('i4',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i4')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i4',this.closest('.item'))">Any existing brand guidelines document</div><div class="item-meta" id="m-i4">—</div></div></div>
       </div>
     </div>
 
@@ -94,27 +129,27 @@ body{background:#e8e3db;font-family:'Montserrat',sans-serif;min-height:100vh;pad
 
     <div class="sec">
       <div class="sec-hd"><div class="sec-line"></div><div class="sec-label">02</div><div class="sec-title">Website Content & Copy</div></div>
-      <div class="sec-desc">All written content must be provided by JBY. Pages cannot be designed to final spec without real copy.</div>
+      <div class="sec-desc">All written content must be provided by JBY. Pages cannot be designed without real copy.</div>
       <div class="blocking">Blocking: All page design and development</div>
       <div class="sub">
         <div class="sub-title">Core Pages</div>
-        <div class="item" data-id="i5" onclick="tog('i5',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Homepage: headline, subheadline, body copy, 2 CTAs text, any custom sections</div></div>
-        <div class="item" data-id="i6" onclick="tog('i6',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Service Page: full page copy and list of services offered</div></div>
-        <div class="item" data-id="i7" onclick="tog('i7',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Yacht Management Page: full page copy</div></div>
-        <div class="item" data-id="i8" onclick="tog('i8',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Locations Page: all office locations with addresses, phone numbers, and hours</div></div>
-        <div class="item" data-id="i9" onclick="tog('i9',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Location-Specific Pages: individual copy for each location (San Diego, Seattle, and any others)</div></div>
-        <div class="item" data-id="i10" onclick="tog('i10',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">General Contact Page: copy and any specific instructions</div></div>
-        <div class="item" data-id="i11" onclick="tog('i11',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Legal Pages: Privacy Policy, Terms and Conditions, Statement of Information (final approved text)</div></div>
+        <div class="item" data-id="i5"><div class="item-left"><div class="cb-wrap" onclick="tog('i5',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i5')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i5',this.closest('.item'))">Homepage: headline, subheadline, body copy, 2 CTAs text, any custom sections</div><div class="item-meta" id="m-i5">—</div></div></div>
+        <div class="item" data-id="i6"><div class="item-left"><div class="cb-wrap" onclick="tog('i6',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i6')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i6',this.closest('.item'))">Service Page: full page copy and list of services offered</div><div class="item-meta" id="m-i6">—</div></div></div>
+        <div class="item" data-id="i7"><div class="item-left"><div class="cb-wrap" onclick="tog('i7',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i7')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i7',this.closest('.item'))">Yacht Management Page: full page copy</div><div class="item-meta" id="m-i7">—</div></div></div>
+        <div class="item" data-id="i8"><div class="item-left"><div class="cb-wrap" onclick="tog('i8',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i8')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i8',this.closest('.item'))">Locations Page: all office locations with addresses, phone numbers, and hours</div><div class="item-meta" id="m-i8">—</div></div></div>
+        <div class="item" data-id="i9"><div class="item-left"><div class="cb-wrap" onclick="tog('i9',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i9')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i9',this.closest('.item'))">Location-Specific Pages: individual copy for each location (San Diego, Seattle, and any others)</div><div class="item-meta" id="m-i9">—</div></div></div>
+        <div class="item" data-id="i10"><div class="item-left"><div class="cb-wrap" onclick="tog('i10',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i10')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i10',this.closest('.item'))">General Contact Page: copy and any specific instructions</div><div class="item-meta" id="m-i10">—</div></div></div>
+        <div class="item" data-id="i11"><div class="item-left"><div class="cb-wrap" onclick="tog('i11',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i11')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i11',this.closest('.item'))">Legal Pages: Privacy Policy, Terms and Conditions, Statement of Information</div><div class="item-meta" id="m-i11">—</div></div></div>
       </div>
       <div class="sub">
         <div class="sub-title">Brand Pages</div>
-        <div class="item" data-id="i12" onclick="tog('i12',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Copy for each Brand Landing Page (Axopar, Wally, Riva, Pershing, Sirena, BRABUS, FOUR WINNS, Jeanneau)</div></div>
-        <div class="item" data-id="i13" onclick="tog('i13',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Confirmed list of all brands to be represented on the site</div></div>
-        <div class="item" data-id="i14" onclick="tog('i14',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Brands by Locations</div></div>
+        <div class="item" data-id="i12"><div class="item-left"><div class="cb-wrap" onclick="tog('i12',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i12')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i12',this.closest('.item'))">Copy for each Brand Landing Page (Axopar, Wally, Riva, Pershing, Sirena, BRABUS, FOUR WINNS, Jeanneau)</div><div class="item-meta" id="m-i12">—</div></div></div>
+        <div class="item" data-id="i13"><div class="item-left"><div class="cb-wrap" onclick="tog('i13',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i13')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i13',this.closest('.item'))">Confirmed list of all brands to be represented on the site</div><div class="item-meta" id="m-i13">—</div></div></div>
+        <div class="item" data-id="i14"><div class="item-left"><div class="cb-wrap" onclick="tog('i14',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i14')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i14',this.closest('.item'))">Brands by Locations</div><div class="item-meta" id="m-i14">—</div></div></div>
       </div>
       <div class="sub">
         <div class="sub-title">Knowledge Center</div>
-        <div class="item" data-id="i15" onclick="tog('i15',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Initial batch of articles, news posts, or how-to content (minimum: 5–10 pieces)</div></div>
+        <div class="item" data-id="i15"><div class="item-left"><div class="cb-wrap" onclick="tog('i15',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i15')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i15',this.closest('.item'))">Initial batch of articles, news posts, or how-to content (minimum: 5–10 pieces)</div><div class="item-meta" id="m-i15">—</div></div></div>
       </div>
     </div>
 
@@ -122,29 +157,29 @@ body{background:#e8e3db;font-family:'Montserrat',sans-serif;min-height:100vh;pad
 
     <div class="sec">
       <div class="sec-hd"><div class="sec-line"></div><div class="sec-label">03</div><div class="sec-title">Media Content</div></div>
-      <div class="sec-desc">Photography and video are required per brand and per team member. Partial delivery is not sufficient for launch.</div>
+      <div class="sec-desc">Photography and video required per brand and per team member. Partial delivery is not sufficient for launch.</div>
       <div class="blocking">Blocking: Individual Team Member pages</div>
       <div class="sub">
         <div class="sub-title">Brand Photography</div>
-        <div class="item" data-id="i16" onclick="tog('i16',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Axopar: min. 5 exterior + 5 interior images per model, min. 1920×1080px, landscape, no watermarks</div></div>
-        <div class="item" data-id="i17" onclick="tog('i17',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Wally: same standard as above</div></div>
-        <div class="item" data-id="i18" onclick="tog('i18',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Riva: same standard as above</div></div>
-        <div class="item" data-id="i19" onclick="tog('i19',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Pershing: same standard as above</div></div>
-        <div class="item" data-id="i20" onclick="tog('i20',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Sirena: same standard as above</div></div>
-        <div class="item" data-id="i21" onclick="tog('i21',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">BRABUS: same standard as above</div></div>
-        <div class="item" data-id="i22" onclick="tog('i22',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">FOUR WINNS: same standard as above</div></div>
-        <div class="item" data-id="i23" onclick="tog('i23',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Jeanneau: same standard as above</div></div>
-        <div class="item" data-id="i24" onclick="tog('i24',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Confirmation of which brands currently have photography delivered and which are outstanding</div></div>
-        <div class="item" data-id="i25" onclick="tog('i25',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Mari-Time video for Home page</div></div>
-        <div class="item" data-id="i26" onclick="tog('i26',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Video for "Built Around the Owner" section on Home page</div></div>
-        <div class="item" data-id="i27" onclick="tog('i27',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Video for "Access to World-Class Brands" section on Home page</div></div>
-        <div class="item" data-id="i28" onclick="tog('i28',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Main hero video for Home page</div></div>
+        <div class="item" data-id="i16"><div class="item-left"><div class="cb-wrap" onclick="tog('i16',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i16')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i16',this.closest('.item'))">Axopar: min. 5 exterior + 5 interior images per model, min. 1920×1080px, landscape, no watermarks</div><div class="item-meta" id="m-i16">—</div></div></div>
+        <div class="item" data-id="i17"><div class="item-left"><div class="cb-wrap" onclick="tog('i17',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i17')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i17',this.closest('.item'))">Wally: same standard as above</div><div class="item-meta" id="m-i17">—</div></div></div>
+        <div class="item" data-id="i18"><div class="item-left"><div class="cb-wrap" onclick="tog('i18',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i18')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i18',this.closest('.item'))">Riva: same standard as above</div><div class="item-meta" id="m-i18">—</div></div></div>
+        <div class="item" data-id="i19"><div class="item-left"><div class="cb-wrap" onclick="tog('i19',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i19')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i19',this.closest('.item'))">Pershing: same standard as above</div><div class="item-meta" id="m-i19">—</div></div></div>
+        <div class="item" data-id="i20"><div class="item-left"><div class="cb-wrap" onclick="tog('i20',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i20')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i20',this.closest('.item'))">Sirena: same standard as above</div><div class="item-meta" id="m-i20">—</div></div></div>
+        <div class="item" data-id="i21"><div class="item-left"><div class="cb-wrap" onclick="tog('i21',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i21')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i21',this.closest('.item'))">BRABUS: same standard as above</div><div class="item-meta" id="m-i21">—</div></div></div>
+        <div class="item" data-id="i22"><div class="item-left"><div class="cb-wrap" onclick="tog('i22',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i22')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i22',this.closest('.item'))">FOUR WINNS: same standard as above</div><div class="item-meta" id="m-i22">—</div></div></div>
+        <div class="item" data-id="i23"><div class="item-left"><div class="cb-wrap" onclick="tog('i23',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i23')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i23',this.closest('.item'))">Jeanneau: same standard as above</div><div class="item-meta" id="m-i23">—</div></div></div>
+        <div class="item" data-id="i24"><div class="item-left"><div class="cb-wrap" onclick="tog('i24',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i24')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i24',this.closest('.item'))">Confirmation of which brands have photography delivered and which are outstanding</div><div class="item-meta" id="m-i24">—</div></div></div>
+        <div class="item" data-id="i25"><div class="item-left"><div class="cb-wrap" onclick="tog('i25',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i25')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i25',this.closest('.item'))">Mari-Time video for Home page</div><div class="item-meta" id="m-i25">—</div></div></div>
+        <div class="item" data-id="i26"><div class="item-left"><div class="cb-wrap" onclick="tog('i26',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i26')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i26',this.closest('.item'))">Video for "Built Around the Owner" section on Home page</div><div class="item-meta" id="m-i26">—</div></div></div>
+        <div class="item" data-id="i27"><div class="item-left"><div class="cb-wrap" onclick="tog('i27',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i27')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i27',this.closest('.item'))">Video for "Access to World-Class Brands" section on Home page</div><div class="item-meta" id="m-i27">—</div></div></div>
+        <div class="item" data-id="i28"><div class="item-left"><div class="cb-wrap" onclick="tog('i28',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i28')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i28',this.closest('.item'))">Main hero video for Home page</div><div class="item-meta" id="m-i28">—</div></div></div>
       </div>
       <div class="sub">
         <div class="sub-title">Team Photography & Bios</div>
-        <div class="item" data-id="i29" onclick="tog('i29',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Professional headshot for every team member (high resolution, landscape or square crop)</div></div>
-        <div class="item" data-id="i30" onclick="tog('i30',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Decision: add written bio per team member, or use existing content from current website?</div></div>
-        <div class="item" data-id="i31" onclick="tog('i31',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Broker profiles: confirmation of which team members have active listings</div></div>
+        <div class="item" data-id="i29"><div class="item-left"><div class="cb-wrap" onclick="tog('i29',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i29')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i29',this.closest('.item'))">Professional headshot for every team member (high resolution, landscape or square crop)</div><div class="item-meta" id="m-i29">—</div></div></div>
+        <div class="item" data-id="i30"><div class="item-left"><div class="cb-wrap" onclick="tog('i30',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i30')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i30',this.closest('.item'))">Decision: add written bio per team member, or use existing content from current website?</div><div class="item-meta" id="m-i30">—</div></div></div>
+        <div class="item" data-id="i31"><div class="item-left"><div class="cb-wrap" onclick="tog('i31',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i31')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i31',this.closest('.item'))">Broker profiles: confirmation of which team members have active listings</div><div class="item-meta" id="m-i31">—</div></div></div>
         <div class="note"><strong>Note:</strong> Team headshots and names will be pulled from the current JBY website. No action needed unless JBY wants to add or update anything.</div>
       </div>
     </div>
@@ -152,26 +187,23 @@ body{background:#e8e3db;font-family:'Montserrat',sans-serif;min-height:100vh;pad
     <div class="rule"></div>
 
     <div class="sec">
-      <div class="sec-hd"><div class="sec-line"></div><div class="sec-label">04</div><div class="sec-title">Crisp Live Chat & WhatsApp Business</div></div>
-      <div class="sec-desc">JBY must create and own these accounts. The build team integrates them but cannot create accounts on JBY's behalf.</div>
-      <div class="blocking">Blocking: Live chat · WhatsApp widget · AI Support Agent</div>
+      <div class="sec-hd"><div class="sec-line"></div><div class="sec-label">04</div><div class="sec-title">AI Agent & Live Chat</div></div>
+      <div class="sec-desc">An AI agent and live chat will be integrated into the website. The specific platform and setup details are currently being finalized — further instructions will be shared once confirmed.</div>
+      <div class="blocking">Blocking: Live chat · WhatsApp widget · AI Agent</div>
       <div class="sub">
-        <div class="sub-title">Crisp</div>
-        <div class="item" data-id="i32" onclick="tog('i32',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Crisp workspace created at crisp.chat using a JBY business email</div></div>
-        <div class="item" data-id="i33" onclick="tog('i33',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Plus plan subscribed (€295/month) — required for AI agent, white-labeling, and WhatsApp <span class="tag-warn">Not required now</span></div></div>
-        <div class="item" data-id="i34" onclick="tog('i34',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">AI Support Agent name decided (name visible to site visitors)</div></div>
-        <div class="item" data-id="i35" onclick="tog('i35',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">YachtWay build team added as operator in the Crisp workspace</div></div>
+        <div class="sub-title">AI Agent</div>
+        <div class="note"><strong>Setup details forthcoming.</strong> The platform for the AI agent is currently under review. No action required from the JBY side at this stage — we will follow up with specific steps once confirmed.</div>
       </div>
       <div class="sub">
         <div class="sub-title">WhatsApp Business API</div>
-        <div class="item" data-id="i36" onclick="tog('i36',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Meta Business Manager account created or confirmed at business.facebook.com</div></div>
-        <div class="item" data-id="i37" onclick="tog('i37',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Business verification completed with Meta (submit business registration or tax ID)</div></div>
-        <div class="item" data-id="i38" onclick="tog('i38',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Business domain verified inside Meta Business Manager</div></div>
-        <div class="item" data-id="i39" onclick="tog('i39',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">WhatsApp Business Account (WABA) created under Accounts > WhatsApp Accounts</div></div>
-        <div class="item" data-id="i40" onclick="tog('i40',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Dedicated phone number added to WABA (must not be registered on any existing WhatsApp account)</div></div>
-        <div class="item" data-id="i41" onclick="tog('i41',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Payment method linked in WhatsApp Manager</div></div>
-        <div class="item" data-id="i42" onclick="tog('i42',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">WhatsApp Business Account ID shared with YachtWay build team</div></div>
-        <div class="item" data-id="i43" onclick="tog('i43',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Meta system user access token shared with YachtWay build team</div></div>
+        <div class="item" data-id="i36"><div class="item-left"><div class="cb-wrap" onclick="tog('i36',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i36')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i36',this.closest('.item'))">Meta Business Manager account created or confirmed at business.facebook.com</div><div class="item-meta" id="m-i36">—</div></div></div>
+        <div class="item" data-id="i37"><div class="item-left"><div class="cb-wrap" onclick="tog('i37',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i37')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i37',this.closest('.item'))">Business verification completed with Meta (submit business registration or tax ID)</div><div class="item-meta" id="m-i37">—</div></div></div>
+        <div class="item" data-id="i38"><div class="item-left"><div class="cb-wrap" onclick="tog('i38',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i38')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i38',this.closest('.item'))">Business domain verified inside Meta Business Manager</div><div class="item-meta" id="m-i38">—</div></div></div>
+        <div class="item" data-id="i39"><div class="item-left"><div class="cb-wrap" onclick="tog('i39',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i39')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i39',this.closest('.item'))">WhatsApp Business Account (WABA) created under Accounts > WhatsApp Accounts</div><div class="item-meta" id="m-i39">—</div></div></div>
+        <div class="item" data-id="i40"><div class="item-left"><div class="cb-wrap" onclick="tog('i40',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i40')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i40',this.closest('.item'))">Dedicated phone number added to WABA (must not be registered on any existing WhatsApp account)</div><div class="item-meta" id="m-i40">—</div></div></div>
+        <div class="item" data-id="i41"><div class="item-left"><div class="cb-wrap" onclick="tog('i41',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i41')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i41',this.closest('.item'))">Payment method linked in WhatsApp Manager</div><div class="item-meta" id="m-i41">—</div></div></div>
+        <div class="item" data-id="i42"><div class="item-left"><div class="cb-wrap" onclick="tog('i42',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i42')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i42',this.closest('.item'))">WhatsApp Business Account ID shared with YachtWay build team</div><div class="item-meta" id="m-i42">—</div></div></div>
+        <div class="item" data-id="i43"><div class="item-left"><div class="cb-wrap" onclick="tog('i43',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i43')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i43',this.closest('.item'))">Meta system user access token shared with YachtWay build team</div><div class="item-meta" id="m-i43">—</div></div></div>
         <div class="note"><strong>Note:</strong> Meta business verification takes 2–5 business days.</div>
       </div>
     </div>
@@ -184,22 +216,34 @@ body{background:#e8e3db;font-family:'Montserrat',sans-serif;min-height:100vh;pad
       <div class="blocking">Blocking: Analytics setup · Conversion tracking · Behavioral reporting</div>
       <div class="sub">
         <div class="sub-title">If JBY already has these accounts</div>
-        <div class="item" data-id="i44" onclick="tog('i44',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Confirm GA4 property is owned by a JBY company Google account</div></div>
-        <div class="item" data-id="i45" onclick="tog('i45',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Confirm GTM container is owned by a JBY company Google account</div></div>
-        <div class="item" data-id="i46" onclick="tog('i46',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Grant YachtWay build team Editor access to GA4</div></div>
-        <div class="item" data-id="i47" onclick="tog('i47',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Grant YachtWay build team Editor access to GTM</div></div>
-        <div class="item" data-id="i48" onclick="tog('i48',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Share GA4 Measurement ID (format: G-XXXXXXXXXX)</div></div>
-        <div class="item" data-id="i49" onclick="tog('i49',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Share GTM Container ID (format: GTM-XXXXXXX)</div></div>
+        <div class="item" data-id="i44"><div class="item-left"><div class="cb-wrap" onclick="tog('i44',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i44')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i44',this.closest('.item'))">Confirm GA4 property is owned by a JBY company Google account</div><div class="item-meta" id="m-i44">—</div></div></div>
+        <div class="item" data-id="i45"><div class="item-left"><div class="cb-wrap" onclick="tog('i45',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i45')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i45',this.closest('.item'))">Confirm GTM container is owned by a JBY company Google account</div><div class="item-meta" id="m-i45">—</div></div></div>
+        <div class="item" data-id="i46"><div class="item-left"><div class="cb-wrap" onclick="tog('i46',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i46')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i46',this.closest('.item'))">Grant YachtWay build team Editor access to GA4</div><div class="item-meta" id="m-i46">—</div></div></div>
+        <div class="item" data-id="i47"><div class="item-left"><div class="cb-wrap" onclick="tog('i47',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i47')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i47',this.closest('.item'))">Grant YachtWay build team Editor access to GTM</div><div class="item-meta" id="m-i47">—</div></div></div>
+        <div class="item" data-id="i48"><div class="item-left"><div class="cb-wrap" onclick="tog('i48',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i48')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i48',this.closest('.item'))">Share GA4 Measurement ID (format: G-XXXXXXXXXX)</div><div class="item-meta" id="m-i48">—</div></div></div>
+        <div class="item" data-id="i49"><div class="item-left"><div class="cb-wrap" onclick="tog('i49',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i49')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i49',this.closest('.item'))">Share GTM Container ID (format: GTM-XXXXXXX)</div><div class="item-meta" id="m-i49">—</div></div></div>
       </div>
       <div class="sub">
         <div class="sub-title">If JBY does not have these accounts yet</div>
-        <div class="item" data-id="i50" onclick="tog('i50',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Create a Google account using a JBY company email</div></div>
-        <div class="item" data-id="i51" onclick="tog('i51',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Create GA4 property at analytics.google.com</div></div>
-        <div class="item" data-id="i52" onclick="tog('i52',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Create GTM container at tagmanager.google.com</div></div>
-        <div class="item" data-id="i53" onclick="tog('i53',this)"><div class="cb-wrap"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-text">Share access with YachtWay build team (build team will handle all configuration)</div></div>
+        <div class="item" data-id="i50"><div class="item-left"><div class="cb-wrap" onclick="tog('i50',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i50')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i50',this.closest('.item'))">Create a Google account using a JBY company email</div><div class="item-meta" id="m-i50">—</div></div></div>
+        <div class="item" data-id="i51"><div class="item-left"><div class="cb-wrap" onclick="tog('i51',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i51')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i51',this.closest('.item'))">Create GA4 property at analytics.google.com</div><div class="item-meta" id="m-i51">—</div></div></div>
+        <div class="item" data-id="i52"><div class="item-left"><div class="cb-wrap" onclick="tog('i52',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i52')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i52',this.closest('.item'))">Create GTM container at tagmanager.google.com</div><div class="item-meta" id="m-i52">—</div></div></div>
+        <div class="item" data-id="i53"><div class="item-left"><div class="cb-wrap" onclick="tog('i53',this.closest('.item'))"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><polyline points="1,3.5 3.5,6 8,1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="item-info-btn" onclick="toggleMeta('i53')"><span>i</span></div></div><div class="item-right"><div class="item-text" onclick="tog('i53',this.closest('.item'))">Share access with YachtWay build team (build team will handle all configuration)</div><div class="item-meta" id="m-i53">—</div></div></div>
       </div>
     </div>
 
+  </div>
+
+  <!-- Activity Log -->
+  <div class="log-section">
+    <div class="log-toggle" onclick="toggleLog()">
+      <div class="log-toggle-line"></div>
+      <div class="log-toggle-title">Activity Log</div>
+      <div class="log-toggle-arrow" id="log-arrow">▼</div>
+    </div>
+    <div class="log-body" id="log-body">
+      <div id="log-entries"><div class="log-empty">No activity yet — check off an item to get started.</div></div>
+    </div>
   </div>
 
   <div class="ftr">
@@ -211,55 +255,144 @@ body{background:#e8e3db;font-family:'Montserrat',sans-serif;min-height:100vh;pad
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-app-compat.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-database-compat.min.js"></script>
 <script>
-const firebaseConfig = {
-  apiKey: "AIzaSyAPwkYlLTD606FId5iusmIBYuov6lwxi4c",
-  authDomain: "jby-checklist.firebaseapp.com",
-  databaseURL: "https://jby-checklist-default-rtdb.firebaseio.com",
-  projectId: "jby-checklist",
-  storageBucket: "jby-checklist.firebasestorage.app",
-  messagingSenderId: "309638198316",
-  appId: "1:309638198316:web:9adb86b9c94dadc5dacd89"
-};
+firebase.initializeApp({
+  apiKey:"AIzaSyAPwkYlLTD606FId5iusmIBYuov6lwxi4c",
+  authDomain:"jby-checklist.firebaseapp.com",
+  databaseURL:"https://jby-checklist-default-rtdb.firebaseio.com",
+  projectId:"jby-checklist",
+  storageBucket:"jby-checklist.firebasestorage.app",
+  messagingSenderId:"309638198316",
+  appId:"1:309638198316:web:9adb86b9c94dadc5dacd89"
+});
+const db=firebase.database();
+const ref=db.ref('checklist');
+const logRef=db.ref('activity_log');
+const sd=document.getElementById('sd');
+const sl=document.getElementById('sl');
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
-const ref = db.ref('checklist');
-const ss = document.getElementById('ss');
-const pf = document.getElementById('pf');
-const pc = document.getElementById('pc');
+function setSync(s){
+  sd.className='sync-dot '+(s==='saved'?'saved':s==='saving'?'saving':'');
+  sl.textContent=s==='saved'?'✓ synced':s==='saving'?'saving...':'connecting...';
+}
 
-function setStatus(s){
-  ss.className='sync-status '+(s==='saved'?'saved':s==='saving'?'saving':'');
-  ss.textContent=s==='saved'?'✓ synced':s==='saving'?'saving...':'connecting...';
+function parseUA(ua){
+  let browser='Unknown browser',os='Unknown OS',device='Desktop';
+  if(/Edg/.test(ua)) browser='Edge';
+  else if(/Chrome/.test(ua)&&!/Chromium/.test(ua)) browser='Chrome';
+  else if(/Firefox/.test(ua)) browser='Firefox';
+  else if(/Safari/.test(ua)&&!/Chrome/.test(ua)) browser='Safari';
+  else if(/Opera|OPR/.test(ua)) browser='Opera';
+  if(/Windows/.test(ua)) os='Windows';
+  else if(/Mac OS X/.test(ua)) os='macOS';
+  else if(/Linux/.test(ua)) os='Linux';
+  else if(/Android/.test(ua)) os='Android';
+  else if(/iPhone|iPad/.test(ua)) os='iOS';
+  if(/Mobi|Android/.test(ua)) device='Mobile';
+  else if(/iPad|Tablet/.test(ua)) device='Tablet';
+  return {browser,os,device};
+}
+
+function fmtTime(ts){
+  const d=new Date(ts);
+  return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+' · '+d.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
 }
 
 function upd(){
   const all=document.querySelectorAll('.item');
   const done=[...all].filter(it=>it.classList.contains('done')).length;
-  pf.style.width=Math.round(done/all.length*100)+'%';
-  pc.textContent=done+' / '+all.length+' completed';
+  document.getElementById('pf').style.width=Math.round(done/all.length*100)+'%';
+  document.getElementById('pc').textContent=done+' / '+all.length+' completed';
 }
 
-function tog(id,el){
+function updateMeta(id,data){
+  const el=document.getElementById('m-'+id);
+  if(!el) return;
+  if(data&&data.checked&&data.ts){
+    const ua=parseUA(data.ua||'');
+    el.innerHTML=`<strong>Checked</strong> ${fmtTime(data.ts)} · ${ua.browser} on ${ua.os} · ${ua.device}${data.city?` · <span style="color:#C46B46">${data.city}${data.country?', '+data.country:''}</span>`:''}`;
+  } else if(data&&!data.checked&&data.ts){
+    el.innerHTML=`<strong>Unchecked</strong> ${fmtTime(data.ts)}`;
+  } else {
+    el.textContent='—';
+  }
+}
+
+function toggleMeta(id){
+  const el=document.getElementById('m-'+id);
+  if(el) el.classList.toggle('show');
+}
+
+function toggleLog(){
+  const b=document.getElementById('log-body');
+  const a=document.getElementById('log-arrow');
+  b.classList.toggle('open');
+  a.classList.toggle('open');
+}
+
+function renderLog(entries){
+  const container=document.getElementById('log-entries');
+  if(!entries||Object.keys(entries).length===0){
+    container.innerHTML='<div class="log-empty">No activity yet.</div>';
+    return;
+  }
+  const sorted=Object.values(entries).sort((a,b)=>b.ts-a.ts).slice(0,50);
+  container.innerHTML=sorted.map(e=>{
+    const ua=parseUA(e.ua||'');
+    const itemEl=document.querySelector(`[data-id="${e.id}"] .item-text`);
+    const label=itemEl?itemEl.textContent.trim().slice(0,60)+'…':'Item '+e.id;
+    return `<div class="log-entry">
+      <div class="log-dot ${e.checked?'checked':'unchecked'}"></div>
+      <div class="log-content">
+        <div class="log-item-name"><strong>${e.checked?'Checked':'Unchecked'}:</strong> ${label}</div>
+        <div class="log-details">${ua.browser} · ${ua.os} · ${ua.device}${e.city?` · <span>${e.city}${e.country?', '+e.country:''}</span>`:''}</div>
+        <div class="log-time">${fmtTime(e.ts)}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function getLocation(){
+  try{
+    const r=await fetch('https://ipapi.co/json/');
+    const d=await r.json();
+    return {city:d.city||'',country:d.country_name||''};
+  }catch{return {city:'',country:''};}
+}
+
+async function tog(id,el){
   const cb=el.querySelector('.cb-wrap');
-  const done=!el.classList.contains('done');
-  el.classList.toggle('done',done);
-  cb.classList.toggle('checked',done);
+  const checked=!el.classList.contains('done');
+  el.classList.toggle('done',checked);
+  cb.classList.toggle('checked',checked);
   upd();
-  setStatus('saving');
-  ref.child(id).set(done).then(()=>setStatus('saved')).catch(()=>setStatus('error'));
+  setSync('saving');
+  const ts=Date.now();
+  const ua=navigator.userAgent;
+  const loc=await getLocation();
+  const payload={checked,ts,ua,city:loc.city,country:loc.country};
+  await ref.child(id).set(payload);
+  await logRef.push({id,checked,ts,ua,city:loc.city,country:loc.country});
+  updateMeta(id,payload);
+  setSync('saved');
 }
 
-// Load state from Firebase on page open — syncs all users
-ref.on('value', snap=>{
+// Load state
+ref.on('value',snap=>{
   const data=snap.val()||{};
   document.querySelectorAll('.item').forEach(it=>{
     const id=it.dataset.id;
-    const checked=!!data[id];
-    it.classList.toggle('done',checked);
-    it.querySelector('.cb-wrap').classList.toggle('checked',checked);
+    const d=data[id];
+    const checked=d&&d.checked;
+    it.classList.toggle('done',!!checked);
+    it.querySelector('.cb-wrap').classList.toggle('checked',!!checked);
+    updateMeta(id,d);
   });
   upd();
-  setStatus('saved');
+  setSync('saved');
+});
+
+// Load log
+logRef.on('value',snap=>{
+  renderLog(snap.val());
 });
 </script>
